@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto&display=swap" rel="stylesheet">
+    <title>Math CEO Codes</title>
+</head>
+<body>
+    <h1>Codes</h1>
+
+    <ul>
+        <li>F moves Forward.  B moves Backward.</li>
+        <li>L rotates Left.  R rotates Right. (L and R stay in the same spot; they only pivot.)</li>
+        <li>The arrow points the way you are facing.</li>
+        <li>Click on the grid to change the starting point.</li>
+        <li>When you <i>fractalize</i>, that means every F will get replaced with your entire code.</li>  
+    </ul>
+
+    
+
+    
+
+    <p> 
+        <label for="code-text">Write your code here:</label>
+        <input type="text" size="40wh" id="code-text"/>
+        <label for="scale" class="slider-label">Scale:</label>
+        <input type="range" class="slider" size="40wh" id="scale"
+            min="4" max="50" value="30" step="1"/>
+    </p>
+
+    <canvas id="canvas" width="800" height="400"></canvas>
+
+    <img src="arrow.png" alt="" id="arrow" />
+
+    <button type="button" class="neon-button" size="40wh" id="frac">Fractalize!</button>
+    
+    <p class="center" id="new-code"></p>
+
+    <script src="script.js"></script>
+
+    <p class="image-ref">Background image from 
+        <a href="https://pixabay.com/illustrations/fractal-mandelbrot-math-sleep-6241216/">pixabay</a></p>
+</body>
+</html>

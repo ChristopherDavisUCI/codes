@@ -1,0 +1,213 @@
+:root {
+  --main-color:rgb(241, 240, 240);
+  --clr-neon: hsl(280 50% 80%);
+  --clr-bg: hsl(323 21% 16%);
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body::before {
+    background:url("fractal.jpg");
+    background-size: 250px;
+    display: block; content:""; position: absolute; z-index:-1;
+    top:0; left: 0; right: 0; min-height: 120%;
+    opacity:.5;
+    background-attachment: fixed;
+  }
+
+  body {
+    background-color: #333;
+    /* background:url("fractal.jpg"); */
+    background-size: 250px;
+    background-attachment: fixed;
+    color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size:110%;
+    line-height: 1.3;
+    height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 2px #aaa;
+  }
+
+  /* button {
+    font-family: 'Libre Baskerville', serif;
+    background: var(--main-color);
+    margin: 1rem;
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-weight: bold;
+  } */
+
+  input {
+    background: var(--main-color);
+    padding: 2px;
+    border-radius: 4px;
+    outline: none;
+    border:none;
+    margin-left: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
+  canvas {
+    background: var(--main-color);
+    /* width: 800px;
+    height: 800px; */
+    /* border-radius: 5px; */
+  }
+  
+  #arrow {
+    display: none;
+    /* background: transparent; */
+  } 
+
+  .center {
+    inline-size: 600px;
+    overflow-wrap: break-word;
+    color: grey;
+  }
+
+  .image-ref {
+    color:grey;
+    /* padding-top: 1rem; */
+    padding-bottom: 1rem;
+  }
+
+  a {
+    color:grey;
+  }
+
+  .slider-label {
+    padding-left: 2rem;
+  }
+
+  .slider {
+    color:grey;
+  }
+  
+  .neon-button {
+    font-size: 0.8rem;
+    margin: 2rem 0rem 0rem 0rem;
+    font-family: 'Libre Baskerville', serif;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    border: var(--clr-neon) 0.125em solid;
+    padding: 0.25em 1em;
+    border-radius: 0.25em;
+  
+    /* text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor; */
+  
+    box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
+  
+    position: relative;
+  }
+  
+  /* .neon-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(1em);
+    opacity: 0.7;
+  } */
+  
+  .neon-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 1em 0.25em var(--clr-neon);
+    opacity: 0;
+    background-color: var(--clr-neon);
+    z-index: -1;
+    transition: opacity 100ms linear;
+  }
+  
+  .neon-button:hover,
+  .neon-button:focus {
+    color: var(--clr-bg);
+    text-shadow: none;
+  }
+  
+  .neon-button:hover::before,
+  .neon-button:focus::before {
+    opacity: 1;
+  }
+  .neon-button:hover::after,
+  .neon-button:focus::after {
+    opacity: 1;
+  }
+  
+  input[type='range'] {
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 10px;
+    overflow: hidden;
+    /* width: 400px; */
+  }
+  
+  input[type='range']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 20px;
+  }
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: -210px 0 0 200px #666;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border: 0;
+  }
+  
+  input[type='range']::-moz-range-thumb {
+    background: #333;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #666;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border: 0;
+  }
+  
+  input[type="range"]::-moz-range-track {
+    background-color: #ddd;
+  }
+  input[type="range"]::-moz-range-progress {
+    background-color: #666;
+    height: 20px
+  }
+  input[type="range"]::-ms-fill-upper {
+    background-color: #ddd;
+  }
+  input[type="range"]::-ms-fill-lower {
+    background-color: #666;
+  }
